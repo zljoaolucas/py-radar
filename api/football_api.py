@@ -16,12 +16,18 @@ def testar_conexao():
 def imprimir_bonito(dado):
     print(json.dumps(dado, indent=4, ensure_ascii=False))
 
-def puxar_tabela(id):
-    url = f"https://api.api-futebol.com.br/v1/campeonatos/{id}/tabela"
+def puxar_tabela(campeonato_id):
+    url = f"https://api.api-futebol.com.br/v1/campeonatos/{campeonato_id}/tabela"
     headers = {"Authorization": "Bearer " + CHAVE}
 
     response = requests.get(url, headers=headers)
     data = response.json()
     return data
 
-# print(json.dumps(tabela(10), indent=4, ensure_ascii=False))
+def puxar_proximos_jogos(time_id):
+    url = f"https://api.api-futebol.com.br/v1/times/{time_id}/partidas/proximas"
+    headers = {"Authorization": "Bearer "+ CHAVE}
+
+    response = requests.get(url, headers=headers)
+    data = response.json()
+    return data
