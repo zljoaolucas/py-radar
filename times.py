@@ -1,0 +1,22 @@
+TIMES = {
+    "atletico-mg": 30,
+    "bahia": 68,
+    "botafogo": 22,
+    "bragantino": 64,
+    "ceara": 105,
+    "corinthians": 65,
+    "cruzeiro": 37,
+    "flamengo": 18,
+    "fluminense": 26,
+    "fortaleza": 131,
+    "gremio": 45,
+    "internacional": 44,
+    "juventude": 43,
+    "mirassol": 60,
+    "palmeiras": 56,
+    "santos": 63,
+    "sao-paulo": 57,
+    "sport": 79,
+    "vasco": 23,
+    "vitoria": 102
+}
