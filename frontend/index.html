@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+
+<body>
+    <h1>Teste de conexão</h1>
+    <button onclick="buscarTabela()">Buscar tabela</button>
+
+    <script>
+        async function buscarTabela() {
+            const resposta = await fetch('http://localhost:8000/tabela/10');
+            const dados = await resposta.json();
+            console.log(dados)
+        }
+    </script>
+</body>
+
+</html>

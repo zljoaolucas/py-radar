@@ -1,10 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from api.football_api import puxar_tabela, puxar_proximos_jogos
 from datetime import datetime
 from times import TIMES
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # "*" libera geral, pra fins de aprendizado/dev
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/tabela/{campeonato_id}")
 def rota_tabela(campeonato_id):
