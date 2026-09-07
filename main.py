@@ -3,10 +3,12 @@ from datetime import datetime #vai na pasta api -> acessa o arquivo football_api
 from times import TIMES
 
 def inicio():
-    nome_time = str(input("[!] Qual seu time de futebol nacional favorito?\n-> ")).lower().strip()
-    time_id = TIMES[nome_time]
-    proximos_jogos(time_id)
-    pass
+    nome_time = str(input("[!] Qual seu clube de futebol nacional favorito?\n-> ")).lower().strip()
+    try:
+        time_id = TIMES[nome_time]
+        proximos_jogos(time_id)
+    except KeyError:
+        print("Clube inserido inexistente. Tente novamente.")
 
 def tabela():
     resultado = puxar_tabela(10) # puxa a tabela com o campeonato_id = 10 (Série A BR)
@@ -41,4 +43,5 @@ def proximos_jogos(time_id):
             if contador >= 5: #mostra os 5 primeiros jogos
                 return
 
+tabela()
 inicio()
