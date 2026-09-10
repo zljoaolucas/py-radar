@@ -1,0 +1,252 @@
+:root {
+    --fundo: #0a120d;
+    --painel: #11201677;
+    --painel-solido: #101d15;
+    --borda: #223328;
+    --texto: #eef3ee;
+    --texto-fraco: #7f9587;
+    --grama: #4cae6e;
+    --grama-forte: #6fd493;
+    --ouro: #e3b23c;
+    --erro: #e0857e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 15% 0%, #16281c 0%, transparent 45%),
+        var(--fundo);
+    color: var(--texto);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 56px 24px 40px;
+    text-align: center;
+}
+
+.kicker {
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--grama-forte);
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.01em;
+    color: var(--texto);
+}
+
+main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.painel {
+    background: var(--painel-solido);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 28px 24px;
+}
+
+.painel-cabecalho {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.painel-cabecalho h2 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--texto);
+}
+
+.dica {
+    margin: 0;
+    color: var(--texto-fraco);
+    font-size: 0.82rem;
+}
+
+.carregando {
+    color: var(--texto-fraco);
+    font-size: 0.9rem;
+}
+
+/* ---------- TABELA ---------- */
+
+.tabela-lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.linha-time {
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 4px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.linha-time:last-child {
+    border-bottom: none;
+}
+
+.linha-time .posicao {
+    font-family: "Oswald", sans-serif;
+    color: var(--texto-fraco);
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+.linha-time.top4 .posicao {
+    color: var(--grama-forte);
+}
+
+.linha-time .nome-time {
+    font-size: 0.95rem;
+}
+
+.linha-time .pontos {
+    font-family: "Oswald", sans-serif;
+    color: var(--ouro);
+    font-size: 0.95rem;
+}
+
+/* ---------- SELETOR DE TIMES (escudos) ---------- */
+
+.seletor-times {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.time-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 10px 8px;
+    width: 84px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.time-botao:hover {
+    border-color: var(--grama);
+    background: #16281c88;
+}
+
+.time-botao.ativo {
+    border-color: var(--grama-forte);
+    background: #16281caa;
+}
+
+.time-botao img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.time-botao .iniciais {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--borda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    font-size: 0.8rem;
+    color: var(--texto);
+}
+
+.time-botao span.nome {
+    font-size: 0.68rem;
+    color: var(--texto-fraco);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* ---------- JOGOS ---------- */
+
+.jogos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartao-jogo {
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #0d1712;
+}
+
+.cartao-jogo .data {
+    color: var(--ouro);
+    font-size: 0.78rem;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+}
+
+.cartao-jogo .placar {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.cartao-jogo .campeonato {
+    color: var(--texto-fraco);
+    font-size: 0.76rem;
+    margin-top: 6px;
+    text-transform: capitalize;
+}
+
+.mensagem-erro {
+    color: var(--erro);
+    font-size: 0.88rem;
+}
+
+.mensagem-vazia {
+    color: var(--texto-fraco);
+    font-size: 0.88rem;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    color: var(--texto-fraco);
+    font-size: 0.78rem;
+}
+
+footer a {
+    color: var(--grama-forte);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

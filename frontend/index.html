@@ -4,20 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+    <title>py-radar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Teste de conexão</h1>
-    <button onclick="buscarTabela()">Buscar tabela</button>
 
-    <script>
-        async function buscarTabela() {
-            const resposta = await fetch('http://localhost:8000/tabela/10');
-            const dados = await resposta.json();
-            console.log(dados)
-        }
-    </script>
+    <header>
+        <span class="kicker">py-radar</span>
+        <h1>Acompanhe seu campeonato</h1>
+    </header>
+
+    <main>
+        <section class="painel" id="painel-tabela">
+            <div class="painel-cabecalho">
+                <h2>Classificação</h2>
+            </div>
+            <div id="tabela-resultado" class="tabela-lista">
+                <p class="carregando">Carregando tabela...</p>
+            </div>
+        </section>
+
+        <section class="painel">
+            <div class="painel-cabecalho">
+                <h2>Próximos jogos</h2>
+                <p class="dica">Escolha um time</p>
+            </div>
+            <div id="seletor-times" class="seletor-times"></div>
+            <div id="jogos-resultado" class="jogos-lista"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto de estudo · dados via <a href="https://www.api-futebol.com.br/" target="_blank">API Futebol</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ def inicio():
         print("Clube inserido inexistente. Tente novamente.")
 
 def tabela():
-    resultado = puxar_tabela(10) # puxa a tabela com o campeonato_id = 10 (Série A BR)
+    resultado = puxar_tabela(14) # puxa a tabela com o campeonato_id = 10 (Série A BR)
     print("\n|  --- Campeonato Brasileiro ---\n|")
     for time in resultado:
         # :<15 -> alinha à esquerda, largura mínima N (15). reserva 15 caracteres pra esse valor, se sobrar, preenche com espaço branco
